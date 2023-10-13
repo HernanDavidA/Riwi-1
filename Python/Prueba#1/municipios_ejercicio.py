@@ -15,11 +15,7 @@ def menu_principal():
     print('J. Promedio de contaminación de Corrientes hídricas')
     print('K. Terminar')
     
-# def municipios_llenos():
-#     return [{"nombre":'Bello','toneladas':15, 'Porcentaje': {'Olores':59,'asentamientos': 21, 'hidricas': 20}}
-#             {'nombre':'Medellin','toneladas':35, 'Porcentaje': {'Olores':45,'asentamientos': 10, 'hidricas': 45}}
-#             {'nombre':'Envigado','toneladas':19, 'Porcentaje': {'Olores':30,'asentamientos': 15, 'hidricas': 55}}]
-    
+
 def registro_de_datos(municipios):
     
     nombre = input('Ingrese el nombre del municipio: ')
@@ -33,38 +29,128 @@ def registro_de_datos(municipios):
     municipios.append(municipio)
     print('El municipio fue ingresado con exito!')
 
-def municipios(municipios):
-    municipio_max=''
-    contaminacion_mayor=''
     
-    if municipios:
+def toneladas(municipios, opcion):
+    
+    if opcion == 1:
+        municipio=''
+        tonelada=0
         for i in municipios:
-            for j in 
+            if i['toneladas'] > tonelada:
+                municipio=i['nombre']
+                tonelada=i['toneladas']
+        print(f'El municipio que mayor cantidad de basura genera es {municipio} con {tonelada} toneladas.')
+    elif opcion == 2:
+        municipio=''
+        tonelada=municipios[0]['toneladas']
+        for i in municipios:
+            if i['toneladas'] < tonelada:
+                municipio=i['nombre']
+                tonelada=i['toneladas']
+        print(f'El municipio que menor cantidad de basura genera es {municipio} con {tonelada} toneladas.')
+        
+def promedio_ton(municipios,opcion):
     
-    
-        '
-    
-    if municipios.
-    
-    
+    sumatoria=0
+    Counter=0
+    if opcion==1:
+        for i in municipios:
+            sumatoria+=i['toneladas']
+            Counter+=1
 
+        print(f'el promedio de toneladas por dia de los municipios es {sumatoria/Counter}')
+    if opcion==2:
+        for i in municipios:
+            sumatoria+=i['toneladas']
+            Counter+=1
+        
+        print(f'el promedio de toneladas por mes de los municipios es {(sumatoria/Counter)*30}')
+        
+def problema_amb(municipios,opcion):
+    
+    if opcion==1:
+        municipio=''
+        problema=0
+        contaminacion=""
+        for i in municipios:
+            #en el for (nombre) toma el primer key del diccionario porcentales en este caso son dos key 1 nombre del indice 2 es el valor 
+            for nombre, j in i['porcentaje'].items():
+                if j > problema:
+                    municipio=i['nombre']
+                    problema=j
+                    contaminacion=nombre
+                    
+        print(f'El mayor problema de {municipio} son l@s {contaminacion} con un porcentaje del {problema}.')    
+        
+    if opcion==2:
+        municipio=''
+        problema=municipios[0]['porcentaje']['Olores ofensivos']
+        contaminacion=""
+        for i in municipios:
+            for nombre, j in i['porcentaje'].items():
+                if j < problema:
+                    municipio=i['nombre']
+                    problema=j
+                    contaminacion=nombre
+                    
+        print(f'El menor problema de {municipio} son l@s {contaminacion} con un porcentaje del {problema}.')        
+                   
+def promedio_cont(municipios,opcion):
+    
+    sumatoria=0
+    Counter=0
+    if opcion==1:
+        for i in municipios:
+            sumatoria+=i["porcentaje"]["Olores ofensivos"]
+            Counter+=1
+            
+        print(f'La contaminacion promedio de los olores ofensivos es {sumatoria/Counter}')
+    
+    if opcion==2:
+        for i in municipios:
+            sumatoria+=i["porcentaje"]["asentamientos ilegales"]
+            Counter+=1
+            
+        print(f'La contaminacion promedio de los asentamientos ilegales es {sumatoria/Counter}')
+        
+    if opcion==3:
+        for i in municipios:
+            sumatoria+=i["porcentaje"]["corrientes hidricas"]
+            Counter+=1
+            
+        print(f'La contaminacion promedio de las corrientes hidricas es {sumatoria/Counter}')
+        
 def main():
     while True:
-        #municipios=municipios_llenos()
-        municipios1=[]
+        municipios=[{"nombre":'Bello','toneladas':20, 'porcentaje': {'Olores ofensivos':59,'asentamientos ilegales': 21, 'corrientes hidricas': 20}},
+                    {'nombre':'Medellin','toneladas':35, 'porcentaje': {'Olores ofensivos':45,'asentamientos ilegales': 15, 'corrientes hidricas': 40}},
+                     {'nombre':'Envigado','toneladas':19, 'porcentaje': {'Olores ofensivos':30,'asentamientos ilegales': 17, 'corrientes hidricas': 53}}]
 
         menu_principal()
 
         opcion=input('Ingrese una opcion: ').upper()
         opcion.upper()
         if opcion=='A':
-            registro_de_datos(municipios1)
+            registro_de_datos(municipios)
         elif opcion=='B':
-            toneladas(municipios1)
-
-
-
-
+            toneladas(municipios,1)
+        elif opcion=='C':
+            toneladas(municipios,2)
+        elif opcion=='D':
+            promedio_ton(municipios,1)
+        elif opcion=='E':
+            promedio_ton(municipios,2) 
+        elif opcion=='F':
+            problema_amb(municipios,1)
+        elif opcion=='G':
+            problema_amb(municipios,2)
+        elif opcion=='H':
+            promedio_cont(municipios,1)
+        elif opcion=='I':
+            promedio_cont(municipios,2)
+        elif opcion=='J':
+            promedio_cont(municipios,3)     
+            
         elif opcion=='K':
             print('Bye')
             break
