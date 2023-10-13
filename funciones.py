@@ -75,5 +75,5 @@ while flag: #primer while solo muestra el menu
                 
 
     if(opcion=='5')
-    break
+    break "esto es una prueba"
 
