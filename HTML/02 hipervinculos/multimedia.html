@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimedia</title>
+
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <a href=".">volver</a>
+    <a id="inicio"></a>
+    <center>
+      <h1>Multimedia</h1>
+    </center>
+    <hr />
+    <h2>Insertar imagen local</h2>
+    <img
+      src="./img/1650466413_240889_1650466661_noticia_normal_recorte1.jpg"
+      alt="imagen de gato"
+      height="250px"
+    />
+    <h2>Insertar imagen en linea</h2>
+    <img
+      src="https://s1.eestatic.com/2023/07/29/ciencia/782681856_235038553_1706x960.jpg"
+      alt="tigre"
+      height="250px"
+      loading="lazy"
+    />
+    <h2>Insertar gift local</h2>
+    <img src="./img/floppa-caracal.gif" alt="caracal" height="250" />
+    <h2>Figura con leyenda</h2>
+    <figure>
+      <img
+        src="./img/red_nose_pitbull_45494_7_600.webp"
+        alt="pitbull"
+        height="250"
+      />
+      <figcaption>pitbull</figcaption>
+    </figure>
+    <hr />
+    <h2>Importar video</h2>
+    <video
+      src="./img/img/video.mp4"
+      poster="img/1650466413_240889_1650466661_noticia_normal_recorte1.jpg"
+      height="250"
+      controls
+    ></video>
+    <h2>Importar video con auto play</h2>
+    <video
+      src="./img/img/video.mp4"
+      height="250"
+      controls
+      muted
+      autoplay
+    ></video>
+    <h2>Importar video con subtitulos</h2>
+    <video src="./img/img/video.mp4" controls height="250">
+      <!-- archivo .vtt es el formato que trae los subtitulos     -->
+      <track src="subtitulo.vtt" kind="subtitles" label="Español" />
+    </video>
+    <h2>Importar un audio</h2>
+    <audio src="./img/img/audio.mp3" controls  muted autoplay></audio>
+    <footer>
+      <a href="#inicio">Inicio</a>
+    </footer>
+  </body>
+</html>
