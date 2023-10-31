@@ -69,6 +69,8 @@ a {
   transform: rotate(-45deg);
 }
 
+/* hover se usa para que cuando se le coloque el puntero realice acciones */
+
 .social-media .t:hover {
   transform: rotate(405deg);
   border-radius: 100%;
@@ -110,4 +112,15 @@ a {
 
 .social-media .y:hover i {
   color: #ffffff;
+}
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80vh;
+  align-items: center;
+  padding: 50px 8% 0;
+
+
 }
