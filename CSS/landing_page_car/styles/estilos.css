@@ -118,9 +118,69 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   align-items: center;
   padding: 50px 8% 0;
+  overflow: hidden;
+}
 
+.home .home-content {
+  max-width: 630px;
+}
 
+.home .home-content h1 {
+  font-size: 50px;
+}
+
+.home .home-content h3 {
+  font-size: 40px;
+  color: #1743e3;
+}
+
+.home .home-content p {
+  font-size: 16px;
+  margin: 15px 0 30px;
+}
+
+.home .home-content .btn {
+  padding: 10px 28px;
+  background-color: #1743e3;
+  border: 2px solid #1743e3;
+  border-radius: 6px;
+  color: #eaeaea;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.home .home-content .btn:hover {
+  background: transparent;
+  color: #1743e3;
+}
+
+/* estilos de imagen */
+.home-img {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+  right: 5%;
+}
+
+.home-img .rombo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  border: 25px solid #1743e3;
+  border-radius: 12%;
+}
+
+.home-img .rombo img {
+  position: absolute;
+  max-width: 700px;
+  transform: rotate(-45deg);
+  top: 80px;
+  left: -150px;
 }
